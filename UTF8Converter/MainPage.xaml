@@ -1,0 +1,49 @@
+﻿<Page
+    x:Class="UTF8Converter.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:UTF8Converter"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    NavigationCacheMode="Required"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <local:SVGImageConverter x:Name="SvgConverter" />
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Image Width="300" Height="300" 
+            x:Name="Myimage" Loaded="Myimage_Loaded"
+            Source="{x:Bind Svg, Converter={StaticResource SvgConverter}, Mode=OneWay}"
+            Visibility="Visible" />
+        <Image Width="300" Height="300" Grid.Row="0" Grid.Column="2"
+            x:Name="Myimage2" Loaded="Myimage_Loaded2"
+            Source="{x:Bind Svg2, Converter={StaticResource SvgConverter}, Mode=OneWay}"
+            Visibility="Visible" />
+        <Image Width="300" Height="300" Grid.Row="1" Grid.Column="1"
+            x:Name="Myimage3" Loaded="Myimage_Loaded3"
+            Source="{x:Bind Svg3, Converter={StaticResource SvgConverter}, Mode=OneWay}"
+            Visibility="Visible" />
+        <Image Width="300" Height="300" Grid.Row="2" Grid.Column="0"
+            x:Name="Myimage4" Loaded="Myimage_Loaded4"
+            Source="{x:Bind Svg4, Converter={StaticResource SvgConverter}, Mode=OneWay}"
+            Visibility="Visible" />
+        <Image Width="300" Height="300" Grid.Row="2" Grid.Column="2"
+            x:Name="Myimage5" Loaded="Myimage_Loaded5"
+            Source="{x:Bind Svg5, Converter={StaticResource SvgConverter}, Mode=OneWay}"
+            Visibility="Visible" />
+        
+        
+    </Grid>
+</Page>
